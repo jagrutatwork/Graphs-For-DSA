@@ -161,6 +161,21 @@ public class Basics {
 
 	}
 
+	public static void dfs(ArrayList<Edge> graph[], int curr, boolean visited[])
+	{
+		System.out.println(curr+" ");
+		
+		visited[curr] = true;
+		
+		for(int i = 0; i< graph[curr].size(); i++)
+		{
+			Edge e = graph[curr].get(i);
+			
+			dfs(graph, e.dest, visited);
+			
+		}
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -199,6 +214,10 @@ public class Basics {
 			}
 
 		}
+		
+		
+		//DFS CALL:
+		 dfs(graph, 0, visited);
 
 	}
 
